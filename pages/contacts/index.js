@@ -1,9 +1,13 @@
-import Heading from "../../components/Heading"
+import Head from "next/head";
+import Heading from "../../components/Heading";
 
 const Contacts = () => (
-    <div>
-        <Heading tag ="h2" text="Contacts: "/>
-    </div>
-)
+  <>
+    <Head>
+      <title>Contacts</title>
+    </Head>
+    <Heading text="Contacts :" />
+  </>
+);
 
-export default Contacts
+export default Contacts;
