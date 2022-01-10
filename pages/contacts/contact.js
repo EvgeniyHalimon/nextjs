@@ -1,5 +1,7 @@
+import Heading from '../../components/Heading';
+
 const Contact = () => (
-    <h1>Big Floppa</h1>
+    <Heading text='Big Floppa'/>
 )
 
 export default Contact
