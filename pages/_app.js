@@ -1,4 +1,6 @@
 import Layout from '../components/Layout'
+import Image from "next/image"
+import shuttle from "../public/shuttle.jpg"
 import '../styles/globals.scss'
 
 const MyApp = ({ Component, pageProps }) => (
@@ -6,6 +8,13 @@ const MyApp = ({ Component, pageProps }) => (
     <main>
       <Component {...pageProps} />
     </main>
+    <Image
+      src={shuttle}
+      width={600}
+      height={400}
+      alt='preview'
+      placeholder='blur'
+    />
   </Layout>
 )
 
