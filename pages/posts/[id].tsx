@@ -1,7 +1,8 @@
+import { GetStaticPaths } from 'next'
 import Head from "next/head";
 import PostInfo from "../../components/PostInfo";
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(`${process.env.API_HOST}/posts/`)
   const data = await response.json()
 
