@@ -1,7 +1,14 @@
+import { FC } from "react";
 import Head from "next/head";
+import { GetServerSideProps } from "next";
 import ContactInfo from "../../components/ContactInfo";
+import { contactType } from "../../types";
 
-export const getServerSideProps = async(context) => {
+type contactTypeProps = {
+  contact: contactType
+}
+
+export const getServerSideProps: GetServerSideProps = async(context) => {
   const {id} = context.params
   const response = await fetch(`${process.env.API_HOST}/users/${id}`)
   const data = await response.json()
@@ -19,7 +26,7 @@ export const getServerSideProps = async(context) => {
   }
 }
 
-const Contact = ({contact}) => (
+const Contact: FC<contactTypeProps> = ({contact}) => (
   <>
     <Head>
       <title>Contact</title>
